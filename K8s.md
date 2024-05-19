@@ -20,7 +20,7 @@ Kubernetes(K8s) is a container orchestration tool, which offers:
 - Disaster recovery -- backup and restore
 
 ## K8s Components
-###Pod
+### Pod
 - Smallest unit of K8s
 - Abstraction over contrainer
 - Usually 1 application per Pod
