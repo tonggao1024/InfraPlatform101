@@ -66,6 +66,15 @@ deployment -> pod -> container
 ## Basic Architecture
 
 ### Nodes
+Node is worker machine in K8s cluster
+- Each Node has multiple Pods on it
+- 3 processes must be installed on every Node
+  - Kubelet: Agent that runs on each node in the cluster, responsible for managing pods and containers
+  - Kube-proxy: Network proxy that runs on each node, maintaining network rules (forward the request)
+  - Container runtime: Software responsible for running containers (e.g., Docker, containerd)
+- Woker Nodes do the actual work
+
+
 
 
 
