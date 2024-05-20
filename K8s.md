@@ -3,12 +3,8 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Components](#k8s-components)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
+- [Basic Architecture](#basic-architecture)
+
 
 ## Introduction
 
@@ -39,7 +35,7 @@ deployment -> pod -> container
 - also act as a load balancer because we do replications on Nodes(servers) and they are sharing the Service for the replicated pod.
 
 ### Ingress
-- forward the http request to service
+- route traffic into the cluster by forward the http request to service
 
 ### ConfigMap
 - external configuration of the application
@@ -56,21 +52,20 @@ deployment -> pod -> container
 - Can be either a storage on local machine, or remote, ouside of K8s cluster(external reference)
 
 ### Deployment
+- for stateLESS Apps
 - When doing Node replication, you defind blue print for your application pods (i.e number of replicas)
+- abtraction of pods
 - In practice, user will not directly working with pods, instead user work with Deployments
 - You can scale up/down number of pods
 
+### StatefulSet
+- for stateFUL Apps or Databases deployment, similar as Deployment but also make sure the DB read/write consistency
+- for best practice, DB are often hosted outside of K8s cluster
+
+  
+## Basic Architecture
+
+### Nodes
 
 
-
-## Features
-Replication of Nodes 
-- for each pods (same pod share the same Service)
-
-- 
-### Prerequisites
-List any prerequisites or dependencies required to run the project.
-
-### Installation
-Step-by-step instructions on how to install the project.
 
