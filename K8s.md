@@ -4,6 +4,8 @@
 - [Introduction](#introduction)
 - [Components](#k8s-components)
 - [Basic Architecture](#basic-architecture)
+- [Cluster Set-Up](#cluster-setup)
+- [Minikube](#minikube)
 
 
 ## Introduction
@@ -65,7 +67,7 @@ deployment -> pod -> container
   
 ## Basic Architecture
 
-### Nodes
+### Worker Node
 Node is worker machine in K8s cluster
 - Each Node has multiple Pods on it
 - 3 processes must be installed on every Node
@@ -74,6 +76,49 @@ Node is worker machine in K8s cluster
   - Container runtime: Software responsible for running containers (e.g., Docker, containerd)
 - Woker Nodes do the actual work
 
+### Master 
+There are 4 processes run on every master:
+- Api Server
+   - cluster gateway
+   - acts as a gatekeeper for authentication
+   - forward valid request to Scheduler
+   - Only 1 entry point to the cluster
+- Scheduler
+   - schedule the request on one of the work nodes based on the resources allocation
+   - it just decides which node the pod will be scheduled, the actual schedule work is done by cubelet on the worker Node 
+- Controller Manager
+   - detect state changes like crashing and pod die.
+   - it makes the request to the Scheduler to restart the pod
+- etcd
+   - cluster brain
+   - A key-value store that stores all the cluster data
+   - store i.e What resources are avaiable; Did the cluster state change etc.
+   - The actual application data is not stored here.
+
+## Cluster Setup 
+
+Resources: CPU|RAM|STORAGE
+Nodes:
+- 2 Master Nodes -> less resources
+- 3 Woker Nodes
+Add new Master/Node server:
+1. get new bare server
+2. install all processes
+3. add it to the cluster
+
+
+## Minikube
+For test locally
+- creates Virtual Box on your laptop
+- Node runs in the Virtual Box
+- creates only 1 Node k8s cluster, both master and worker running on this node
+- pre-build docker container on the node
+- mainly for testing purposes
+
+
+## Kubectl
+- It's a cli to interact with the cluster (talking to API Server on Master)
+- It's not only for Minikube cluster, but can be used on any type of K8s cluster
 
 
 
