@@ -9,6 +9,8 @@
 - [Kubectl](#kubectl)
 - [Basic Commands](#basic-commands)
 - [YAML Configuration File](#yaml-configuration-file)
+- [Demo](#demo)
+- [K8s Namespaces](#k8s-namespaces)
 
 ## Introduction
 
@@ -207,7 +209,7 @@ The kubectl top command returns current CPU and memory usage for a cluster’s p
 [Sample YAML files](https://gitlab.com/nanuchi/youtube-tutorial-series/-/tree/master/kubernetes-configuration-file-explained)
 
 #### 3 parts of a Kubernetes config file:
-- metadata : name, labels etc
+- metadata : name, labelsm namespace etc
 - specification :
   - replica
   - selector
@@ -222,4 +224,42 @@ You can use https://jsonformatter.org/yaml-validator to format your YAML file if
 #### Labels & Selectors
 - The selector in deployment will use the label defined under the meta data of pods
 - The selector in service will also use the same label to indentify which pod it's talking to.
+
+## Demo
+
+[Demo](https://gitlab.com/nanuchi/youtube-tutorial-series/-/tree/master/demo-kubernetes-components)
+
+## K8s Namespaces
+
+#### What is Namespaces
+- Organize resources in namespaces
+- Each namespace is a virtual cluster inside a cluster
+- default namespace is used if you don't specify
+
+#### 4 Namespaces by default when creating a cluster
+
+```
+tong ~  $ kubectl get namespace
+NAME              STATUS   AGE
+default           Active   14h
+kube-node-lease   Active   14h
+kube-public       Active   14h
+kube-system       Active   14h
+```
+
+You can define namespace in configuration file under metadata section for each kind.
+
+#### Why use namespace
+- Group resources like databases, monitoring
+- Seperate team using namespace to avoid app name conflict
+- Resource sharing: staging and development can each use a different namespace
+- Can set access and resource limit per namespace, means each team can only have access to their own namespace
+
+#### Characteristics of namespace
+- can't access resources from one namespace to another namespace, which means each namespace has to define it's own configMap/secret
+- Service can be shared across namespace, i.e two namespace can talk to the same DB with it's service.
+- some components can't be created with a namespace, which means it's global inside the cluster, such as volumes and nodes.
+
+
+
 
