@@ -8,6 +8,7 @@
 - [Minikube](#minikube)
 - [Kubectl](#kubectl)
 - [Basic Commands](#basic-commands)
+- [YAML Configuration File](#yaml-configuration-file)
 
 ## Introduction
 
@@ -201,5 +202,24 @@ For test locally
 `kubectl top` 
 The kubectl top command returns current CPU and memory usage for a cluster’s pods or nodes, or for a particular pod or node if specified.
 
+## YAML Configuration File
 
+[Sample YAML files](https://gitlab.com/nanuchi/youtube-tutorial-series/-/tree/master/kubernetes-configuration-file-explained)
+
+#### 3 parts of a Kubernetes config file:
+- metadata : name, labels etc
+- specification :
+  - replica
+  - selector
+  - template (which is another configuration file for pod)
+    - metadata
+      - label (used for selector above) 
+    - specification (the blueprint for the pod)
+- status : managed by k8s
+
+You can use https://jsonformatter.org/yaml-validator to format your YAML file if needed.
+
+#### Labels & Selectors
+- The selector in deployment will use the label defined under the meta data of pods
+- The selector in service will also use the same label to indentify which pod it's talking to.
 
