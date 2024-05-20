@@ -101,11 +101,13 @@ There are 4 processes run on every master:
 
 ## Cluster Setup 
 
-Resources: CPU|RAM|STORAGE
-Nodes:
+#### Resources: CPU|RAM|STORAGE
+#### Nodes:
 - 2 Master Nodes -> less resources
 - 3 Woker Nodes
-Add new Master/Node server:
+
+
+#### Add new Master/Node server:
 1. get new bare server
 2. install all processes
 3. add it to the cluster
