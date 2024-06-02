@@ -11,6 +11,7 @@
 - [YAML Configuration File](#yaml-configuration-file)
 - [Demo](#demo)
 - [K8s Namespaces](#k8s-namespaces)
+- [Ingress Controller](#ingress-controller)
 
 ## Introduction
 
@@ -264,6 +265,11 @@ You can define namespace in configuration file under metadata section for each k
 - Service can be shared across namespace, i.e two namespace can talk to the same DB with it's service.
 - some components can't be created with a namespace, which means it's global inside the cluster, such as volumes and nodes.
 
-
+## Ingress Controller
+- evaluate all the rules
+- manage redirctions
+- entry point to the cluster
+- many third-party implementations https://bit.ly/32dfHe3, there is one from K8s called K8s Nginx Ingress Controller
+<img width="914" alt="Screenshot 2024-06-02 at 11 49 15 AM" src="https://github.com/tonggao1024/InfraPlatform101/assets/19530394/ec84f838-f656-4a68-bc64-a9e47c7f104d">
 
 
