@@ -41,6 +41,8 @@ Everything below deployment should be managed by K8s
 - pods communite with each other using service
 - lifecycle of Pod and Service are not connected, this means if pod goes down, service can still serve as connection protocal
 - external service and internal service avaible, depends on the type of the container
+  - external service : type is load balancer
+  - internal service: type is default type ClusterIP
 - also act as a load balancer because we do replications on Nodes(servers) and they are sharing the Service for the replicated pod.
 
 ### Ingress
