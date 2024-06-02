@@ -46,6 +46,10 @@ Everything below deployment should be managed by K8s
 ### Ingress
 - route traffic into the cluster by forward the http request to service
 
+Without Ingress, we have to define external Service to define host:port where the http requrest directly access, but this is not ideal. 
+
+With Ingress, we add an extra layer, the http reqeust will talk to Ingress, and Ingress can forward the request to internal Service.
+
 ### ConfigMap
 - external configuration of the application
 - pod will connect to ConfigMap to read the configs such as DB_URL
