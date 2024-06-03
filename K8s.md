@@ -14,6 +14,7 @@
 - [Ingress Controller](#ingress-controller)
 - [Helm](#helm)
 - [Volumes](#volumes)
+- [Services](#vservices)
 
 ## Introduction
 
@@ -312,6 +313,14 @@ package manager, manage yaml files
   
 <img width="914" alt="Screenshot 2024-06-02 at 9 22 00 PM" src="https://github.com/tonggao1024/InfraPlatform101/assets/19530394/be8d8c5a-b30f-4f7b-9efa-9af613d2e718">
 
+## Services
 
+#### Default type: ClusterIP Services
+
+<img width="914" alt="Screenshot 2024-06-02 at 9 40 55 PM" src="https://github.com/tonggao1024/InfraPlatform101/assets/19530394/a0e428a1-bd54-4097-a76b-2ad35f9d9093">
+
+#### Headless Services
+
+<img width="914" alt="Screenshot 2024-06-02 at 9 45 51 PM" src="https://github.com/tonggao1024/InfraPlatform101/assets/19530394/87b18c70-1c8f-46fb-84dd-67549f5bf7d1">
 
 
