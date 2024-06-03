@@ -297,6 +297,20 @@ package manager, manage yaml files
 - NOT namespaced, it's available to the whole cluster.
 
 #### Persistent Volume Claim  
+- used in Pods configuration
+
+<img width="914" alt="Screenshot 2024-06-02 at 9 11 06 PM" src="https://github.com/tonggao1024/InfraPlatform101/assets/19530394/37e32632-7bbd-4b2d-9a1a-6e3116c7a75b">
+
+#### ConfigMap and Secret
+- these two are local volumes
+- not created via PV and PVC
+- managed by K8s
+
+#### Storage Class
+- Storage Class provisions PV dynamically when PVC claims it
+- requested by PVC (refered in the PVC yaml)
+  
+<img width="914" alt="Screenshot 2024-06-02 at 9 22 00 PM" src="https://github.com/tonggao1024/InfraPlatform101/assets/19530394/be8d8c5a-b30f-4f7b-9efa-9af613d2e718">
 
 
 
