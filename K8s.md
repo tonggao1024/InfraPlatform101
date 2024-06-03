@@ -12,6 +12,8 @@
 - [Demo](#demo)
 - [K8s Namespaces](#k8s-namespaces)
 - [Ingress Controller](#ingress-controller)
+- [Helm](#helm)
+- [Volumes](#volumes)
 
 ## Introduction
 
@@ -271,5 +273,31 @@ You can define namespace in configuration file under metadata section for each k
 - entry point to the cluster
 - many third-party implementations https://bit.ly/32dfHe3, there is one from K8s called K8s Nginx Ingress Controller
 <img width="914" alt="Screenshot 2024-06-02 at 11 49 15 AM" src="https://github.com/tonggao1024/InfraPlatform101/assets/19530394/ec84f838-f656-4a68-bc64-a9e47c7f104d">
+
+
+## Helm
+package manager, manage yaml files
+
+#### Helm Charts
+- bundle of yaml files
+- can be downloaded and use existing ones (ready to use configuration)
+- can be used with Templating Engine, have 1 yaml template and use dynamic values in values.yaml (good for CI/CD pipeline)
+- can be used to deploy across different enviroments
+- can be used for release management
+
+<img width="914" alt="Screenshot 2024-06-02 at 8 56 56 PM" src="https://github.com/tonggao1024/InfraPlatform101/assets/19530394/da16e946-3b0d-466d-95d3-3a88197322b3">
+
+## Volumes
+
+#### Persistent Volume
+- a cluster resource
+- created via YAML file
+- need actual physical storage, like local dist, cloud-storage, an external plugin to your cluster
+- this is an interface to the actual storage, where you have to decide what to use and manage by yourself
+- NOT namespaced, it's available to the whole cluster.
+
+#### Persistent Volume Claim  
+
+
 
 
